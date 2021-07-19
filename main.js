@@ -1,27 +1,16 @@
-// 캐릭터 이미지
-const character = document.querySelector('.character');
+// 텍스트 영역
+let textarea = document.querySelector('.textarea');
 
-//각도
-let degree = 0;
+// 입력중인 문자 수
+let string_num = document.querySelector('.string_num');
 
-//루프 개시
-loop();
+// 텍스트를 입력할때마다 onKeyUp() 실행
+textarea.addEventListener('keyup', onKeyUp);
 
-//화면이 갱신될때마다 실행되는 함수
-function loop() {
-    //회전각 래디언으로 구하기
-    const rotation = (degree * Math.PI) / 180;
-    // 회전각으로 위치 구하기
-    const targetX = window.innerWidth / 2 + 100 * Math.cos(rotation) - 50;
-    const targetY = window.innerHeight / 2 + 100 * Math.sin(rotation) - 50;
+function onKeyUp() {
+    //입력된 텍스트
+    const inputText = textarea.value;
 
-    //character 위치 반영하기
-    character.style.left = `${targetX}px`;
-    character.style.top = `${targetY}px`;
-
-    //각도 1도 증가시키기
-    degree += 1;
-
-    //다음 화면 갱신 타이밍에서 loop() 실행
-    requestAnimationFrame(loop);
+    //문자수 반영
+    string_num.innerText = inputText.length;
 }
