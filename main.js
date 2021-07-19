@@ -1,16 +1,17 @@
-// 텍스트 영역
-let textarea = document.querySelector('.textarea');
+//양단에 공백이 있을 때
+const targetString1 = '    안녕하세여    ';
+const trimmedString1 = targetString1.trim();
+console.log(trimmedString1);
+//결과 : '안녕하세여'
 
-// 입력중인 문자 수
-let string_num = document.querySelector('.string_num');
+//줄바꿈 문자가 삽입되어 있는 경우
+const targetString2 = '   귤은 맛있습니다.\n';
+const trimmedString2 = targetString2.trim();
+console.log(trimmedString2);
+//결과 : '귤은 맛있습니다.'
 
-// 텍스트를 입력할때마다 onKeyUp() 실행
-textarea.addEventListener('keyup', onKeyUp);
-
-function onKeyUp() {
-    //입력된 텍스트
-    const inputText = textarea.value;
-
-    //문자수 반영
-    string_num.innerText = inputText.length;
-}
+//문자열 사이의 공백은 제거되지 않는다.
+const targetString3 = '  사과, 귤.   ';
+const trimmedString3 = targetString3.trim();
+console.log(trimmedString3);
+//결과 : '사과, 귤.'
