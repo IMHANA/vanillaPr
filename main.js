@@ -1,18 +1,27 @@
-//직사각형
-const rectangle = document.querySelector('.rectangle');
+// 캐릭터 이미지
+const character = document.querySelector('.character');
 
-// 버튼 클릭시 onClickButton() 실행
-document.querySelector('.button').addEventListener('click', onClickButton);
+//각도
+let degree = 0;
 
-//버튼 누를때마다 그라데이션 색상 변경
-function onClickButton() {
-    //0~359 사이의 임의의 수 가져오기
-    const randomHue = Math.trunc(Math.random() * 360);
-    //그라데이션의 시작과 끝 색상을 결정
-    const randomColorStart = `hsl(${randomHue}, 100%, 50%)`;
-    const randomColorEnd = `hsl(${randomHue + 40}, 100%, 50%)`;
+//루프 개시
+loop();
 
-    //직사각형의 그라데이션 처리 변수
-    rectangle.style.setProperty('--start', randomColorStart);
-    rectangle.style.setProperty('--end', randomColorEnd);
+//화면이 갱신될때마다 실행되는 함수
+function loop() {
+    //회전각 래디언으로 구하기
+    const rotation = (degree * Math.PI) / 180;
+    // 회전각으로 위치 구하기
+    const targetX = window.innerWidth / 2 + 100 * Math.cos(rotation) - 50;
+    const targetY = window.innerHeight / 2 + 100 * Math.sin(rotation) - 50;
+
+    //character 위치 반영하기
+    character.style.left = `${targetX}px`;
+    character.style.top = `${targetY}px`;
+
+    //각도 1도 증가시키기
+    degree += 1;
+
+    //다음 화면 갱신 타이밍에서 loop() 실행
+    requestAnimationFrame(loop);
 }
