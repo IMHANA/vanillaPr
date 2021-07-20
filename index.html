@@ -8,17 +8,11 @@
     <title>vanilla practice</title>
 </head>
 <body>
-    <header>
-        <label>지역명의 첫 번째 글자를 입력해 주세요. <input id="search-word-input" maxlength="1" type="text"></label>
-    </header>
-    <div id="prefecture-list">
-        <button data-name="속초" data-phonetic="sokcho">속초</button>
-        <button data-name="부산" data-phonetic="busan">부산</button>
-        <button data-name="포항" data-phonetic="pohang">포항</button>
-        <button data-name="상주" data-phonetic="sangju">상주</button>
-        <button data-name="서울" data-phonetic="seoul">서울</button>
-        <button data-name="제주" data-phonetic="jeju">제주</button>
-    </div>
+    <input id="phoneNumberText" placeholder="전화번호" type="tel">
+    <p class="caption">
+        <small>실제로 데이터는 전송되지 않음.</small>
+    </p>
+    <button id="submitButton" type="submit">데이터 전송</button>
     <script src="main.js"></script>
 </body>
 </html>
