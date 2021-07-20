@@ -1,17 +1,14 @@
-//¾ç´Ü¿¡ °ø¹éÀÌ ÀÖÀ» ¶§
-const targetString1 = '    ¾È³çÇÏ¼¼¿©    ';
-const trimmedString1 = targetString1.trim();
-console.log(trimmedString1);
-//°á°ú : '¾È³çÇÏ¼¼¿©'
+const targetString = 'JavaScriptë¥¼ ë°°ìš°ì';
 
-//ÁÙ¹Ù²Ş ¹®ÀÚ°¡ »ğÀÔµÇ¾î ÀÖ´Â °æ¿ì
-const targetString2 = '   ±ÖÀº ¸ÀÀÖ½À´Ï´Ù.\n';
-const trimmedString2 = targetString2.trim();
-console.log(trimmedString2);
-//°á°ú : '±ÖÀº ¸ÀÀÖ½À´Ï´Ù.'
-
-//¹®ÀÚ¿­ »çÀÌÀÇ °ø¹éÀº Á¦°ÅµÇÁö ¾Ê´Â´Ù.
-const targetString3 = '  »ç°ú, ±Ö.   ';
-const trimmedString3 = targetString3.trim();
-console.log(trimmedString3);
-//°á°ú : '»ç°ú, ±Ö.'
+document.querySelector('.result1').innerHTML
+=targetString.includes('JavaScript');
+document.querySelector('.result2').innerHTML
+=targetString.includes('ë°°ìš°ì');
+document.querySelector('.result3').innerHTML
+=targetString.includes('ë°°ìš°ì', 12);
+document.querySelector('.result4').innerHTML
+=targetString.includes('HTML');
+document.querySelector('.result5').innerHTML
+=targetString.startsWith('ë°°ìš°ì');
+document.querySelector('.result6').innerHTML
+=targetString.endsWith('ë°°ìš°ì');
